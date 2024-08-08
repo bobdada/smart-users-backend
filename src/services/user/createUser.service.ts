@@ -11,10 +11,8 @@ export class CreateUserService {
   async invoke(user: any) {
     // write file
     const users = await this.getAllUsersService.invoke();
-    const newUser = { id: Date.now(), ...user };
-    // const newUser = { ...user };
+    const newUser = { id: Date.now().toString(), ...user };
     users.push(newUser);
-
     await fs.writeFile("users.json", JSON.stringify(users), "utf8");
   }
 }

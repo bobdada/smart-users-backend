@@ -12,7 +12,6 @@ export class CreateUserController {
     const request = req.body;
     try {
       // call service here
-
       const users = await this.createUserService.invoke(request);
 
       res.status(201).json({
