@@ -9,8 +9,6 @@ export class GetAllUsersController {
   }
 
   async invoke(req: Request, res: Response, next: NextFunction) {
-    const request = req.body;
-
     try {
       // call service here
       const users = await this.getAllUsersService.invoke();
